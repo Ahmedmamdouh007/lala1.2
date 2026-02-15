@@ -1,4 +1,4 @@
-# Lala Store - Windows Setup Script
+# Lala 1.2 - Windows Setup Script
 # Full setup: Docker, backend-node, frontend, C++ backend (optional), tests
 # Run from project root: .\setup.ps1
 
@@ -7,7 +7,7 @@ $ProjectRoot = $PSScriptRoot
 Set-Location $ProjectRoot
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  Lala Store - Setup (Windows)" -ForegroundColor Cyan
+Write-Host "  Lala 1.2 - Setup (Windows)" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -106,7 +106,7 @@ if (-not (Test-Path $backendBuildDir)) {
 }
 Set-Location $backendBuildDir
 
-$cmakeArgs = @("-DENABLE_LABS=ON", "..")
+$cmakeArgs = @("-DENABLE_LABS=ON", "-DBUILD_MEMORY_LABS=ON", "..")
 & cmake @cmakeArgs 2>&1 | Out-Null
 if ($LASTEXITCODE -eq 0) {
     cmake --build . --config Release 2>&1 | Out-Null
@@ -177,4 +177,5 @@ Write-Host "  Or: npm run backend & npm run frontend (in two terminals)" -Foregr
 Write-Host ""
 Write-Host "  Frontend: http://localhost:3006" -ForegroundColor Gray
 Write-Host "  API:      http://localhost:8080/api" -ForegroundColor Gray
+Write-Host "  Test:     npm run test:api (with backend running)" -ForegroundColor Gray
 Write-Host ""
