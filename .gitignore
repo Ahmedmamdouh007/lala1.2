@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+backend/build/
+frontend/dist/
+*.exe
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# Fuzz artifacts
+crash-*
+leak-*
+timeout-*
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake

@@ -1,0 +1,13 @@
+{
+  "name": "lala-store",
+  "private": true,
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "backend": "cd backend-node && npm start",
+    "frontend": "cd frontend && npm run dev",
+    "start": "npm run backend",
+    "setup:win": "powershell -ExecutionPolicy Bypass -File setup.ps1",
+    "setup:mac": "./setup.sh",
+    "test:api": "node scripts/test-api.js http://127.0.0.1:8080"
+  }
+}

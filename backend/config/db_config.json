@@ -1,0 +1,9 @@
+{
+  "host": "localhost",
+  "port": 5434,
+  "dbname": "lala_store",
+  "user": "app_user",
+  "password": "app_pass",
+  "lab_user": "lab_readonly",
+  "lab_password": "lab_readonly_pass"
+}
